@@ -65,57 +65,57 @@ export default function Features() {
   };
 
   return (
-    <section id="features" className="py-24 bg-zinc-50/60 relative border-t border-zinc-200/50">
+    <section id="features" className="py-16 bg-zinc-50/60 relative border-t border-zinc-200/50">
       {/* Ambient background blur blobs */}
       <div className="absolute top-0 left-1/4 w-[40vw] h-[40vw] bg-radial-glow opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header Block matching the screenshot */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           {/* Centered Capabilities Pill */}
-          <div className="inline-flex items-center px-4 py-1.5 border border-accent-purple/15 bg-accent-purple/5 rounded-full text-[10px] font-mono font-bold tracking-wider text-accent-purple mb-6 shadow-xs select-none">
+          <div className="inline-flex items-center px-3.5 py-1 border border-accent-purple/15 bg-accent-purple/5 rounded-full text-[10px] font-mono font-bold tracking-wider text-accent-purple mb-4 shadow-xs select-none">
             CAPABILITIES
           </div>
           
-          {/* Primary Main Heading */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.05] mb-6">
+          {/* Primary Main Heading - Decreased size for single page fit */}
+          <h2 className="text-3xl sm:text-4xl md:text-[40px] font-extrabold tracking-tight text-zinc-900 leading-tight mb-4">
             Everything you need.{" "}
             <span className="text-[#8b5cf6]">Nothing you</span>{" "}
             <span className="bg-gradient-to-r from-accent-purple to-accent-cyan bg-clip-text text-transparent">don't.</span>
           </h2>
           
           {/* Secondary Subheading */}
-          <p className="text-base sm:text-lg text-zinc-500 font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-zinc-500 font-normal leading-relaxed max-w-2xl mx-auto">
             A complete local AI stack — retrieval, chat, graph, and evaluation — packaged as a single workspace.
           </p>
         </div>
 
-        {/* Feature Cards Grid - 3 columns, 2 rows */}
+        {/* Feature Cards Grid - 3 columns, 2 rows (Compact padding and gap) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
         >
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col p-8 rounded-2xl bg-white/70 border border-zinc-200/60 hover:border-accent-purple/35 backdrop-blur-xl transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-purple-500/5 overflow-hidden"
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="group relative flex flex-col p-6 rounded-2xl bg-white/70 border border-zinc-200/60 hover:border-accent-purple/35 backdrop-blur-xl transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-purple-500/5 overflow-hidden"
             >
               {/* Card Hover Spotlight Radial mask */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Colorful Rounded Icon Container */}
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center border ${feature.colorClass} mb-6 transition-transform duration-300 group-hover:scale-105 shadow-sm`}>
-                {feature.icon}
+              {/* Colorful Rounded Icon Container (Compact size) */}
+              <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${feature.colorClass} mb-4 transition-transform duration-300 group-hover:scale-105 shadow-sm`}>
+                <span className="scale-90">{feature.icon}</span>
               </div>
 
               {/* Content details */}
-              <h3 className="text-lg font-bold text-zinc-800 mb-2 transition-colors group-hover:text-zinc-900">
+              <h3 className="text-base font-bold text-zinc-800 mb-1.5 transition-colors group-hover:text-zinc-900">
                 {feature.title}
               </h3>
               <p className="text-xs text-zinc-500 font-medium leading-relaxed">
