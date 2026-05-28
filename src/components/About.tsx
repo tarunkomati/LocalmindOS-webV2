@@ -1,45 +1,49 @@
 "use client";
 
-import { Crown, Terminal, Code2, Cpu, Server, Network, Layers, ShieldCheck } from "lucide-react";
+import { Crown, Terminal, Code2, Cpu, Server, Network, Layers } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function About() {
   const teamMembers = [
     {
       name: "Nammi Hrutin",
       role: "Team Lead & AIML Architect",
+      badge: "TEAM LEAD",
       focus: "GGUF model pipelines, context windows, FAISS index tuning.",
-      icon: <Crown className="w-4 h-4 text-purple-600" />,
-      colorClass: "bg-purple-100/60 border-purple-250/20"
+      icon: <Crown className="w-5 h-5 text-purple-600" />,
+      colorClass: "bg-purple-50 border-purple-200/30"
     },
     {
       name: "Komati Tarun",
       role: "Lead Full Stack & RAG Dev",
+      badge: "LEAD FULL STACK",
       focus: "Next.js workspace environment, interactive SVG entity graphs.",
-      icon: <Code2 className="w-4 h-4 text-cyan-600" />,
-      colorClass: "bg-cyan-100/60 border-cyan-250/20"
+      icon: <Code2 className="w-5 h-5 text-cyan-600" />,
+      colorClass: "bg-cyan-50 border-cyan-200/30"
     },
     {
       name: "Kalacharla Vinay",
       role: "Backend & Inference Specialist",
+      badge: "BACKEND",
       focus: "FastAPI gateway setup, llama.cpp multi-threading coordinates.",
-      icon: <Cpu className="w-4 h-4 text-blue-600" />,
-      colorClass: "bg-blue-100/60 border-blue-250/20"
+      icon: <Cpu className="w-5 h-5 text-blue-600" />,
+      colorClass: "bg-blue-50 border-blue-200/30"
     },
     {
       name: "Ch Kusuma Sri",
       role: "Data Pipeline & Graph Engineer",
+      badge: "DATA PIPELINE",
       focus: "Semantic parsing pipelines, local NLP entity extractors.",
-      icon: <Network className="w-4 h-4 text-pink-600" />,
-      colorClass: "bg-pink-100/60 border-pink-250/20"
+      icon: <Network className="w-5 h-5 text-pink-600" />,
+      colorClass: "bg-pink-50 border-pink-250/20"
     },
     {
       name: "K Mano Sathwik",
       role: "UI/UX & Performance Engineer",
+      badge: "UI/UX",
       focus: "CSS frosted frames, framer-motion curves, page load indexing.",
-      icon: <Layers className="w-4 h-4 text-emerald-600" />,
-      colorClass: "bg-emerald-100/60 border-emerald-250/20"
+      icon: <Layers className="w-5 h-5 text-emerald-600" />,
+      colorClass: "bg-emerald-50 border-emerald-250/20"
     }
   ];
 
@@ -146,29 +150,31 @@ export default function About() {
                   key={idx}
                   variants={cardVariants}
                   whileHover={{ x: 4, transition: { duration: 0.2 } }}
-                  className="group p-4 bg-white/70 border border-zinc-200/60 hover:border-accent-purple/35 rounded-2xl flex items-center gap-4 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-purple-500/5 select-none"
+                  className="group p-5 md:p-6 bg-white/70 border border-zinc-200/60 hover:border-accent-purple/35 rounded-2xl flex items-center gap-5 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-purple-500/5 select-none"
                 >
-                  {/* Icon Circle badge */}
-                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${member.colorClass} shadow-xs shrink-0 transition-transform group-hover:scale-105`}>
+                  {/* Icon fully rounded circle matching screenshot perfectly */}
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center border ${member.colorClass} shadow-xs shrink-0 transition-transform group-hover:scale-105`}>
                     {member.icon}
                   </div>
                   
-                  {/* Biography details */}
+                  {/* Biography details - Perfect vertical alignment */}
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-sm font-bold text-zinc-800 leading-tight">
+                      <h3 className="text-sm sm:text-base font-bold text-zinc-900 leading-tight">
                         {member.name}
                       </h3>
-                      <span className="px-2 py-0.5 bg-zinc-100 border border-zinc-200 text-zinc-500 font-mono text-[8px] rounded-md font-bold tracking-wide uppercase leading-none">
-                        {member.role.split(" & ")[0]}
+                      <span className="px-2 py-0.5 bg-zinc-100 border border-zinc-200 text-zinc-500 font-mono text-[8px] sm:text-[9px] rounded-md font-bold tracking-wide uppercase leading-none">
+                        {member.badge}
                       </span>
                     </div>
                     
-                    <p className="text-[10px] text-zinc-450 font-bold mt-1 tracking-wide leading-none font-mono">
+                    {/* Role in bold Monospace / Typewriter font matching screenshot exactly */}
+                    <p className="text-xs sm:text-sm font-mono font-bold text-zinc-800 tracking-tight leading-tight mt-1">
                       {member.role}
                     </p>
                     
-                    <p className="text-xs text-zinc-500 font-medium leading-relaxed mt-1.5">
+                    {/* Focus in highly readable soft font */}
+                    <p className="text-xs sm:text-sm text-zinc-500 font-medium leading-relaxed mt-1.5">
                       {member.focus}
                     </p>
                   </div>
