@@ -19,6 +19,81 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const LocalMindLogo = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 120 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <defs>
+      <linearGradient id="neon-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#8b5cf6" />
+        <stop offset="50%" stopColor="#6366f1" />
+        <stop offset="100%" stopColor="#a78bfa" />
+      </linearGradient>
+      <linearGradient id="neon-glow-grad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#c084fc" />
+        <stop offset="100%" stopColor="#6366f1" />
+      </linearGradient>
+    </defs>
+    
+    <g filter="drop-shadow(0px 2px 4px rgba(124, 58, 237, 0.15))">
+      {/* Top Left Slab Column */}
+      <path
+        d="M60 12 L14 88 H32 L60 38 L60 12 Z"
+        fill="url(#neon-grad)"
+        stroke="#7c3aed"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      {/* Top Right Slab Column */}
+      <path
+        d="M60 12 L106 88 H88 L60 38 L60 12 Z"
+        fill="url(#neon-glow-grad)"
+        stroke="#8b5cf6"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      {/* Bottom Horizontal Slab Column */}
+      <path
+        d="M24 74 H96 L88 88 H32 L24 74 Z"
+        fill="url(#neon-grad)"
+        stroke="#6366f1"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      {/* Outer 3D Accent Border Slabs */}
+      <path
+        d="M60 18 L100 84"
+        stroke="#c084fc"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M60 18 L20 84"
+        stroke="#818cf8"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      
+      {/* Centered L letter */}
+      <text
+        x="60"
+        y="66"
+        textAnchor="middle"
+        fill="#6366f1"
+        fontSize="20"
+        fontWeight="900"
+        fontFamily="sans-serif"
+        className="select-none font-sans font-black"
+      >
+        L
+      </text>
+    </g>
+  </svg>
+);
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -60,13 +135,10 @@ export default function Navbar() {
           {/* Logo matching screenshot visually */}
           <a
             href="#home"
-            className="flex items-center gap-3 group transition-transform duration-200 active:scale-95"
+            className="flex items-center gap-3 group transition-transform duration-200 active:scale-95 animate-none"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-accent-purple/20 rounded-full blur-md" />
-              <div className="relative w-8 h-8 flex items-center justify-center bg-gradient-to-br from-accent-purple to-indigo-600 rounded-full text-white font-extrabold text-sm select-none border border-white/10 shadow-md">
-                L
-              </div>
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <LocalMindLogo className="w-8 h-8 transition-transform duration-300 group-hover:scale-105" />
             </div>
             <div className="flex items-center gap-1">
               <span className="font-bold text-lg tracking-tight text-zinc-900">
