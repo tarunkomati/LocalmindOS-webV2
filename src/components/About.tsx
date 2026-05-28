@@ -1,119 +1,180 @@
 "use client";
 
-import { User, Terminal, Code2 } from "lucide-react";
+import { Crown, Terminal, Code2, Cpu, Server, Network, Layers, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
-  const skills = [
-    "AIML Architecture",
-    "Local-first RAG Systems",
-    "Next.js 14 / React 18",
-    "FastAPI (REST Gateway)",
-    "SentenceTransformers",
-    "FAISS Indexing & Search",
-    "llama.cpp Runtimes",
-    "TypeScript & Python",
+  const teamMembers = [
+    {
+      name: "Nammi Hrutin",
+      role: "Team Lead & AIML Architect",
+      focus: "GGUF model pipelines, context windows, FAISS index tuning.",
+      icon: <Crown className="w-4 h-4 text-purple-600" />,
+      colorClass: "bg-purple-100/60 border-purple-250/20"
+    },
+    {
+      name: "Komati Tarun",
+      role: "Lead Full Stack & RAG Dev",
+      focus: "Next.js workspace environment, interactive SVG entity graphs.",
+      icon: <Code2 className="w-4 h-4 text-cyan-600" />,
+      colorClass: "bg-cyan-100/60 border-cyan-250/20"
+    },
+    {
+      name: "Kalacharla Vinay",
+      role: "Backend & Inference Specialist",
+      focus: "FastAPI gateway setup, llama.cpp multi-threading coordinates.",
+      icon: <Cpu className="w-4 h-4 text-blue-600" />,
+      colorClass: "bg-blue-100/60 border-blue-250/20"
+    },
+    {
+      name: "Ch Kusuma Sri",
+      role: "Data Pipeline & Graph Engineer",
+      focus: "Semantic parsing pipelines, local NLP entity extractors.",
+      icon: <Network className="w-4 h-4 text-pink-600" />,
+      colorClass: "bg-pink-100/60 border-pink-250/20"
+    },
+    {
+      name: "K Mano Sathwik",
+      role: "UI/UX & Performance Engineer",
+      focus: "CSS frosted frames, framer-motion curves, page load indexing.",
+      icon: <Layers className="w-4 h-4 text-emerald-600" />,
+      colorClass: "bg-emerald-100/60 border-emerald-250/20"
+    }
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as const,
+      },
+    },
+  };
+
   return (
-    <section id="about" className="py-24 bg-white relative border-t border-zinc-200/50">
+    <section id="about" className="py-20 bg-white relative border-t border-zinc-200/50">
+      {/* Background radial soft light blobbing */}
+      <div className="absolute top-1/4 left-1/3 w-[45vw] h-[45vw] bg-radial-glow opacity-30 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* Header Title */}
+        {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs font-mono text-accent-purple tracking-widest uppercase mb-4 font-bold">
-            🧑‍💻 Creator Profile
+          <div className="inline-flex items-center px-4 py-1.5 border border-accent-purple/15 bg-accent-purple/5 rounded-full text-[10px] font-mono font-bold tracking-wider text-accent-purple mb-6 shadow-xs select-none">
+            TEAM PROFILE
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-[40px] font-extrabold tracking-tight text-zinc-900 leading-tight mb-5">
+            Meet the innovators behind LocalMind OS.
           </h2>
-          <p className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 mb-5">
-            Behind LocalMind OS.
+          <p className="text-sm sm:text-base text-zinc-500 font-medium leading-relaxed max-w-2xl mx-auto">
+            We are a 5-member team dedicated to developing secure, off-line, local-first artificial intelligence tools.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-accent-purple to-accent-cyan mx-auto rounded-full" />
         </div>
 
-        {/* Profile Card Container */}
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+        {/* Core Content: Left Team Photo & Right Team Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
           
-          {/* LEFT: Developer Credentials & Visuals */}
-          <div className="md:col-span-5 flex flex-col p-6 rounded-2xl border border-zinc-200 bg-white/70 backdrop-blur-xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-            {/* Visual glow accent */}
+          {/* LEFT: Team High-Quality Photo Panel */}
+          <div className="lg:col-span-5 flex flex-col justify-between p-6 rounded-2xl border border-zinc-200 bg-zinc-50/50 backdrop-blur-xl relative overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            {/* Soft decorative glow accent */}
             <div className="absolute -top-12 -left-12 w-24 h-24 bg-accent-purple/10 blur-[50px] rounded-full" />
             
-            {/* Profile Header */}
-            <div className="flex items-center gap-4 mb-6 z-10 relative">
-              <div className="p-3 bg-zinc-50 border border-zinc-200 rounded-2xl shadow-xs">
-                <User className="w-6 h-6 text-accent-purple" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-zinc-805 leading-tight">
-                  Tarun Komati
-                </h3>
-                <p className="text-xs text-accent-cyan font-mono tracking-wide uppercase mt-0.5 font-bold">
-                  AIML + Full Stack Developer
-                </p>
+            {/* Visual Team Photo Wrapper */}
+            <div className="relative w-full aspect-square md:aspect-video lg:aspect-square rounded-xl overflow-hidden border border-zinc-200/80 shadow-xs mb-6 group bg-zinc-100">
+              <img
+                src="/team.jpg"
+                alt="LocalMind OS 5-Member Core Team"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+              {/* Overlay Glass Badge */}
+              <div className="absolute bottom-3 left-3 right-3 p-3 bg-white/80 border border-zinc-200/40 rounded-lg backdrop-blur-md shadow-xs">
+                <p className="text-[10px] font-bold text-zinc-800 leading-none">LocalMind OS Core Team</p>
+                <p className="text-[8px] font-mono text-zinc-450 font-semibold mt-1 uppercase">V1.0 Dev Hackathon Deployment</p>
               </div>
             </div>
 
-            {/* Dev stats terminal simulation */}
-            <div className="mt-auto bg-zinc-950 border border-zinc-800 rounded-xl p-4 font-mono text-[10px] text-zinc-400 flex flex-col gap-1.5 shadow-inner">
-              <div className="flex items-center gap-1 text-zinc-500 mb-1 border-b border-zinc-800 pb-1">
-                <Terminal className="w-3 h-3 text-accent-cyan" />
-                <span>developer_profile.sh</span>
+            {/* Quick stats panel */}
+            <div className="bg-zinc-950 border border-zinc-850 rounded-xl p-4 font-mono text-[10px] text-zinc-400 flex flex-col gap-2 shadow-inner">
+              <div className="flex items-center gap-1 text-zinc-550 mb-1 border-b border-zinc-800 pb-1.5 font-bold uppercase tracking-wider">
+                <Terminal className="w-3.5 h-3.5 text-accent-cyan" />
+                <span>workspace_team_manifest.sh</span>
               </div>
               <div className="flex justify-between">
-                <span>$ whoami</span>
-                <span className="text-white font-semibold">tarun_komati</span>
+                <span>$ whoami --team</span>
+                <span className="text-white font-bold">5_core_architects</span>
               </div>
               <div className="flex justify-between">
-                <span>$ focus</span>
-                <span className="text-accent-purple font-semibold">local_neural_inference</span>
+                <span>$ project_target</span>
+                <span className="text-accent-purple font-bold">private_local_inference</span>
               </div>
-              <div className="flex justify-between">
-                <span>$ location</span>
-                <span className="text-zinc-300 font-semibold">India</span>
-              </div>
-              <div className="flex justify-between">
-                <span>$ status</span>
-                <span className="text-emerald-400 font-semibold">Open to Opportunities</span>
+              <div className="flex justify-between flex-wrap gap-x-2">
+                <span>$ active_members</span>
+                <span className="text-emerald-400 font-bold">Hrutin, Tarun, Vinay, Kusuma, Sathwik</span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Biography & Skill mesh */}
-          <div className="md:col-span-7 flex flex-col justify-between p-6 rounded-2xl border border-zinc-200 bg-white/70 backdrop-blur-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2 text-xs font-mono text-accent-purple font-bold">
-                <Code2 className="w-4 h-4" />
-                <span>MISSION STATEMENT</span>
-              </div>
+          {/* RIGHT: Team Members Profile Grid */}
+          <div className="lg:col-span-7 flex flex-col justify-between">
+            <span className="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-4 font-bold select-none">
+              🔧 Core Team & Expert Focus
+            </span>
 
-              <h3 className="text-lg font-bold text-zinc-800">
-                Pioneering secure, local-first intelligence tools.
-              </h3>
-
-              <p className="text-xs text-zinc-600 font-semibold leading-relaxed">
-                As a specialized AIML and Full Stack Engineer, I design software architectures that respect user privacy without compromising performance. 
-              </p>
-              <p className="text-xs text-zinc-500 font-semibold leading-relaxed">
-                LocalMind OS was created to prove that high-performance retrieval and structured chat inference can run efficiently on modern consumer hardware, completely air-gapped from cloud servers.
-              </p>
-            </div>
-
-            {/* Technical skills grid */}
-            <div className="mt-6 pt-6 border-t border-zinc-150">
-              <span className="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-3 font-semibold">
-                🔧 Core Skill Arsenal
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {skills.map((skill, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2.5 py-1 text-[10px] font-semibold font-sans bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md hover:border-accent-purple/35 hover:text-accent-purple hover:bg-accent-purple/5 transition-all"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
+            {/* Members cards grid */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="flex flex-col gap-3"
+            >
+              {teamMembers.map((member, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={cardVariants}
+                  whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                  className="group p-4 bg-white/70 border border-zinc-200/60 hover:border-accent-purple/35 rounded-2xl flex items-center gap-4 transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-purple-500/5 select-none"
+                >
+                  {/* Icon Circle badge */}
+                  <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${member.colorClass} shadow-xs shrink-0 transition-transform group-hover:scale-105`}>
+                    {member.icon}
+                  </div>
+                  
+                  {/* Biography details */}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-sm font-bold text-zinc-800 leading-tight">
+                        {member.name}
+                      </h3>
+                      <span className="px-2 py-0.5 bg-zinc-100 border border-zinc-200 text-zinc-500 font-mono text-[8px] rounded-md font-bold tracking-wide uppercase leading-none">
+                        {member.role.split(" & ")[0]}
+                      </span>
+                    </div>
+                    
+                    <p className="text-[10px] text-zinc-450 font-bold mt-1 tracking-wide leading-none font-mono">
+                      {member.role}
+                    </p>
+                    
+                    <p className="text-xs text-zinc-500 font-medium leading-relaxed mt-1.5">
+                      {member.focus}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
         </div>
