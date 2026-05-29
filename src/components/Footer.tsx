@@ -131,13 +131,59 @@ export default function Footer() {
       </div>
 
       {/* Copyright row */}
-      <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-zinc-150 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] text-zinc-400">
-        <span className="font-semibold">
-          © {new Date().getFullYear()} LocalMind OS. Hand-crafted by Tarun Komati.
-        </span>
-        <span className="flex items-center gap-1 font-semibold">
-          Made with <Heart className="w-3 h-3 text-rose-500 fill-rose-500 animate-pulse" /> & <Cpu className="w-3 h-3 text-accent-cyan" /> for the local AI revolution.
-        </span>
+      <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-zinc-150 flex flex-col gap-6 font-mono text-xs text-zinc-500">
+        
+        {/* Copyright Cases / Disclosures */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-[11px] text-zinc-500 leading-relaxed font-semibold">
+          <p>
+            © {new Date().getFullYear()} LocalMind OS. All rights reserved. 
+            LocalMind OS, the LocalMind OS logo, and FAISS-Grounded Engine are independent creations. 
+            All other trademarks, products, and brands mentioned are the property of their respective owners.
+          </p>
+          <p className="md:text-right">
+            Disclaimer: LocalMind OS is an open-source, air-gapped sandbox environment built for local-first retrieval. 
+            All vector parsing, storage, and model weight inference run strictly on-device with zero server connectivity.
+          </p>
+        </div>
+
+        {/* Made by / Credits Row */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-zinc-100 pt-4 font-semibold text-xs">
+          <span className="text-zinc-500 text-xs">
+            Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 animate-pulse inline align-middle mr-0.5" /> &amp; <Cpu className="w-3.5 h-3.5 text-accent-cyan inline align-middle mr-0.5" /> by{" "}
+            <a 
+              href="https://tarunkomati.in" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-zinc-700 hover:text-accent-purple hover:underline transition-colors font-bold"
+            >
+              Tarun Komati
+            </a>
+            {", "}
+            <a 
+              href="https://vinayk.in" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-zinc-700 hover:text-accent-purple hover:underline transition-colors font-bold"
+            >
+              Vinay Kalacharla
+            </a>
+            {", "}
+            <a 
+              href="https://hrutinnammi.in" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-zinc-700 hover:text-accent-purple hover:underline transition-colors font-bold"
+            >
+              Hrutin Nammi
+            </a>
+            {" & team."}
+          </span>
+          
+          <span className="text-[10px] text-zinc-450 font-bold uppercase tracking-wider">
+            100% Offline • Secure Sandboxed RAG
+          </span>
+        </div>
+
       </div>
     </footer>
   );

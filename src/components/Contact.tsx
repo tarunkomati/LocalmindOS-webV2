@@ -37,8 +37,8 @@ export default function Contact() {
   const contacts = [
     {
       name: "Direct Email",
-      value: "tarunkomati02@gmail.com",
-      href: "mailto:tarunkomati02@gmail.com",
+      value: "localmindos@gmail.com",
+      href: "mailto:localmindos@gmail.com",
       icon: <Mail className="w-5 h-5 text-accent-purple" />,
     },
     {

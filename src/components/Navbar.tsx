@@ -177,11 +177,11 @@ export default function Navbar() {
             </a>
             
             <a
-              href="/app"
+              href="https://github.com/Vinaykalacharla/LOCALMIND_OS_RELEASES/releases/download/v1.0.0/LocalMind.OS_1.1.14_x64-setup.exe"
               className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-accent-purple hover:bg-violet-600 rounded-xl shadow-md shadow-purple-500/10 transition-all duration-200 active:scale-95"
             >
               <Rocket className="w-3.5 h-3.5 fill-white" />
-              Launch App
+              Download for Windows
             </a>
           </div>
 
@@ -232,12 +232,12 @@ export default function Navbar() {
               </a>
 
               <a
-                href="/app"
+                href="https://github.com/Vinaykalacharla/LOCALMIND_OS_RELEASES/releases/download/v1.0.0/LocalMind.OS_1.1.14_x64-setup.exe"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex-1 flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold text-white bg-accent-purple rounded-xl shadow-md shadow-purple-500/10 active:scale-95 transition-all"
               >
                 <Rocket className="w-4.5 h-4.5" />
-                Launch App
+                Download for Windows
               </a>
             </div>
           </motion.div>

@@ -133,11 +133,18 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="/app"
+              href="https://github.com/Vinaykalacharla/LOCALMIND_OS_RELEASES/releases/download/v1.0.0/LocalMind.OS_1.1.14_x64-setup.exe"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-accent-purple hover:bg-violet-600 text-white font-semibold rounded-full shadow-lg shadow-purple-500/15 hover:shadow-purple-500/25 active:scale-98 transition-all text-sm"
             >
               <Rocket className="w-4 h-4 fill-white" />
-              Try Demo
+              Download for Windows
+            </a>
+            <a
+              href="/app"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-white border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 text-zinc-700 hover:text-zinc-900 font-semibold rounded-full shadow-xs active:scale-98 transition-all text-sm"
+            >
+              <Terminal className="w-4 h-4 text-accent-purple" />
+              Try Web Demo
             </a>
             <a
               href="https://github.com"
