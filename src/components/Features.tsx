@@ -1,129 +1,121 @@
 "use client";
 
-import { Shield, Brain, MessageSquare, Network, Sliders, LineChart } from "lucide-react";
+import { Shield, Brain, MessageSquare, Network, Sliders, LineChart, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Features() {
   const features = [
     {
-      icon: <Shield className="w-5 h-5" />,
+      icon: <Shield className="w-6 h-6" />,
       title: "Privacy-first",
-      description: "Everything runs locally. No external APIs, no telemetry, no leaks.",
-      colorClass: "bg-purple-100 text-purple-600 border-purple-200/30"
+      description: "Everything runs locally on your machine. No external API queries, no background telemetry, and absolutely no data leaks. Your private documents are parsed and tokenized fully offline.",
+      colorClass: "bg-purple-50 text-purple-600 border-purple-200/30",
+      accentGlow: "shadow-purple-500/5 hover:border-purple-300"
     },
     {
-      icon: <Brain className="w-5 h-5" />,
+      icon: <Brain className="w-6 h-6" />,
       title: "Semantic Search",
-      description: "FAISS + SentenceTransformers embeddings deliver instant, intent-aware retrieval.",
-      colorClass: "bg-blue-100 text-blue-600 border-blue-200/30"
+      description: "Leverage advanced FAISS + SentenceTransformers embeddings to execute sub-millisecond similarity scans. Retrieves exact paragraphs based on intent-aware similarity thresholds.",
+      colorClass: "bg-blue-50 text-blue-600 border-blue-200/30",
+      accentGlow: "shadow-blue-500/5 hover:border-blue-300"
     },
     {
-      icon: <MessageSquare className="w-5 h-5" />,
+      icon: <MessageSquare className="w-6 h-6" />,
       title: "Grounded Chat",
-      description: "Every answer comes with inline citations and a strict trust-mode toggle.",
-      colorClass: "bg-cyan-100 text-cyan-600 border-cyan-200/30"
+      description: "Interact with your local library securely. The GGUF LLM synthesizes responses grounded strictly in the retrieved document chunks, featuring verified inline citation footnotes.",
+      colorClass: "bg-cyan-50 text-cyan-600 border-cyan-200/30",
+      accentGlow: "shadow-cyan-500/5 hover:border-cyan-300"
     },
     {
-      icon: <Network className="w-5 h-5" />,
+      icon: <Network className="w-6 h-6" />,
       title: "Knowledge Graph",
-      description: "Auto-build a navigable graph from your docs to explore entities and relations.",
-      colorClass: "bg-emerald-100 text-emerald-600 border-emerald-200/30"
+      description: "Watch the sandbox dynamically build a navigable entities graph as you ingest files. Graphing links entities, dates, and contracts into a visually searchable network map.",
+      colorClass: "bg-emerald-50 text-emerald-600 border-emerald-250/20",
+      accentGlow: "shadow-emerald-500/5 hover:border-emerald-300"
     },
     {
-      icon: <Sliders className="w-5 h-5" />,
+      icon: <Sliders className="w-6 h-6" />,
       title: "Model Switching",
-      description: "Hot-swap GGUF models via llama.cpp — pick speed, accuracy, or context size.",
-      colorClass: "bg-pink-100 text-pink-600 border-pink-200/30"
+      description: "Hot-swap local GGUF models on the fly through llama.cpp. Instantly dial in multi-threading variables, context window layers, and CPU/GPU offload percentages based on hardware constraints.",
+      colorClass: "bg-pink-50 text-pink-600 border-pink-250/20",
+      accentGlow: "shadow-pink-500/5 hover:border-pink-300"
     },
     {
-      icon: <LineChart className="w-5 h-5" />,
+      icon: <LineChart className="w-6 h-6" />,
       title: "Evaluation Metrics",
-      description: "Built-in MRR, Top-K, and grounded-accuracy scoring for your retrieval pipeline.",
-      colorClass: "bg-indigo-100 text-indigo-600 border-indigo-200/30"
+      description: "Quantify search precision with built-in Mean Reciprocal Rank (MRR), Hit Rate, Top-K, and grounded accuracy scoring. Test and calibrate your local pipeline variables objectively.",
+      colorClass: "bg-indigo-50 text-indigo-600 border-indigo-250/20",
+      accentGlow: "shadow-indigo-500/5 hover:border-indigo-300"
     }
   ];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
   return (
-    <section id="features" className="py-16 bg-zinc-50/60 relative border-t border-zinc-200/50">
-      {/* Ambient background blur blobs */}
-      <div className="absolute top-0 left-1/4 w-[40vw] h-[40vw] bg-radial-glow opacity-40 pointer-events-none" />
+    <section id="features" className="py-24 bg-zinc-50/60 relative border-t border-zinc-200/50 overflow-hidden">
+      {/* Background ambient light blobs */}
+      <div className="absolute top-0 left-1/4 w-[50vw] h-[50vw] bg-radial-glow opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header Block matching the screenshot */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           {/* Centered Capabilities Pill */}
-          <div className="inline-flex items-center px-3.5 py-1 border border-accent-purple/15 bg-accent-purple/5 rounded-full text-[10px] font-mono font-bold tracking-wider text-accent-purple mb-4 shadow-xs select-none">
+          <div className="inline-flex items-center px-4 py-1.5 border border-accent-purple/15 bg-accent-purple/5 rounded-full text-[10px] font-mono font-bold tracking-wider text-accent-purple mb-6 shadow-xs select-none">
             CAPABILITIES
           </div>
           
-          {/* Primary Main Heading - Decreased size for single page fit */}
-          <h2 className="text-3xl sm:text-4xl md:text-[40px] font-extrabold tracking-tight text-zinc-900 leading-tight mb-4">
+          {/* Primary Main Heading */}
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 leading-tight mb-4">
             Everything you need.{" "}
-            <span className="text-[#8b5cf6]">Nothing you</span>{" "}
-            <span className="bg-gradient-to-r from-accent-purple to-accent-cyan bg-clip-text text-transparent">don't.</span>
+            <span className="bg-gradient-to-r from-accent-purple via-accent-blue to-accent-cyan bg-clip-text text-transparent">Nothing you don't.</span>
           </h2>
           
           {/* Secondary Subheading */}
-          <p className="text-sm sm:text-base text-zinc-500 font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-zinc-500 font-semibold leading-relaxed max-w-2xl mx-auto">
             A complete local AI stack — retrieval, chat, graph, and evaluation — packaged as a single workspace.
           </p>
         </div>
 
-        {/* Feature Cards Grid - 3 columns, 2 rows (Compact padding and gap) */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
-        >
+        {/* Sticky Stacking Cards Deck Container */}
+        <div className="flex flex-col gap-10 max-w-4xl mx-auto px-2 relative mt-12 pb-24">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
-              variants={cardVariants}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col p-6 rounded-2xl bg-white/70 border border-zinc-200/60 hover:border-accent-purple/35 backdrop-blur-xl transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-purple-500/5 overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
+              className={`sticky group bg-white border border-zinc-200/90 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 backdrop-blur-xl shadow-lg transition-all duration-300 ${feature.accentGlow}`}
+              style={{
+                top: `${100 + idx * 32}px`, // Staggers the sticky top levels for deck look
+              }}
             >
-              {/* Card Hover Spotlight Radial mask */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Soft internal gradient background indicator */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/1 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
 
-              {/* Colorful Rounded Icon Container (Compact size) */}
-              <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${feature.colorClass} mb-4 transition-transform duration-300 group-hover:scale-105 shadow-sm`}>
-                <span className="scale-90">{feature.icon}</span>
+              {/* Icon Capsule Box */}
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:shadow-md ${feature.colorClass}`}>
+                {feature.icon}
               </div>
 
-              {/* Content details */}
-              <h3 className="text-base font-bold text-zinc-800 mb-1.5 transition-colors group-hover:text-zinc-900">
-                {feature.title}
-              </h3>
-              <p className="text-xs text-zinc-500 font-medium leading-relaxed">
-                {feature.description}
-              </p>
+              {/* Feature Content */}
+              <div className="flex-1 min-w-0 z-10">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-lg md:text-xl font-bold text-zinc-850 transition-colors group-hover:text-zinc-950">
+                    {feature.title}
+                  </h3>
+                  <span className="px-2 py-0.5 bg-zinc-50 border border-zinc-200 text-[8px] font-mono text-zinc-400 font-bold rounded-md uppercase tracking-wider">
+                    MODULE {idx + 1}
+                  </span>
+                </div>
+                
+                <p className="text-xs md:text-[13px] text-zinc-500 font-semibold leading-relaxed mt-2 group-hover:text-zinc-650 transition-colors">
+                  {feature.description}
+                </p>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );
