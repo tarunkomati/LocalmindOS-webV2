@@ -147,7 +147,7 @@ export default function Hero() {
               Try Web Demo
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/tarunkomati/LocalMind-OS"
               target="_blank"
               rel="noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-white border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50 text-zinc-700 hover:text-zinc-900 font-semibold rounded-full shadow-xs active:scale-98 transition-all text-sm"

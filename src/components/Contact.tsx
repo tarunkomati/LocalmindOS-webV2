@@ -43,14 +43,14 @@ export default function Contact() {
     },
     {
       name: "GitHub Developer",
-      value: "github.com/tarunkomati",
-      href: "https://github.com",
+      value: "github.com/tarunkomati/LocalMind-OS",
+      href: "https://github.com/tarunkomati/LocalMind-OS",
       icon: <GithubIcon className="w-5 h-5 text-accent-cyan" />,
     },
     {
       name: "LinkedIn Network",
-      value: "linkedin.com/in/tarunkomati",
-      href: "https://linkedin.com",
+      value: "linkedin.com/in/tarun-komati-421253329",
+      href: "https://www.linkedin.com/in/tarun-komati-421253329/",
       icon: <LinkedinIcon className="w-5 h-5 text-accent-blue" />,
     },
   ];

@@ -166,7 +166,7 @@ export default function Navbar() {
           {/* Action Buttons matching screenshot exactly */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/tarunkomati/LocalMind-OS"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-zinc-650 hover:text-zinc-900 border border-zinc-200 hover:border-zinc-300 rounded-xl bg-zinc-50/50 backdrop-blur-xs transition-all shadow-xs"
@@ -222,7 +222,7 @@ export default function Navbar() {
 
             <div className="flex items-center justify-between gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/tarunkomati/LocalMind-OS"
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold text-zinc-600 hover:text-zinc-900 border border-zinc-200/60 rounded-xl bg-zinc-50 hover:bg-zinc-100 transition-all"

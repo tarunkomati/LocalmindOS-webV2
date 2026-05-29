@@ -123,7 +123,7 @@ export default function Footer() {
             </span>
             <a href="#about" className="text-zinc-500 hover:text-accent-purple font-semibold transition-colors">Tarun Komati</a>
             <a href="#contact" className="text-zinc-500 hover:text-accent-purple font-semibold transition-colors">Get in touch</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-accent-purple font-semibold transition-colors">GitHub Source</a>
+            <a href="https://github.com/tarunkomati/LocalMind-OS" target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-accent-purple font-semibold transition-colors">GitHub Source</a>
           </div>
 
         </div>
